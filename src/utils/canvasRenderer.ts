@@ -203,8 +203,12 @@ export function getFrameBounds(
   const userScale = (frameConfig.scaleInRoom || 100) / 100;
   const effectiveScale = (baseScalePercent / 100) * userScale;
 
+  // When White Square Border is active, lock frame geometry to 1:1 for perfect square symmetry
+  const isSquareBorder = (frameConfig.borderStyle === 'white-border' || frameConfig.hasMat) && frameConfig.matWindowShape === 'square';
+  const effectiveRatio = isSquareBorder ? '1:1' : frameConfig.aspectRatio;
+
   const ratioHOverW = getAspectRatioMultiplier(
-    frameConfig.aspectRatio,
+    effectiveRatio,
     artImage?.naturalWidth || 800,
     artImage?.naturalHeight || 1000,
     frameConfig.orientation

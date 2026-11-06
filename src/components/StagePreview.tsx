@@ -254,13 +254,20 @@ export const StagePreview: React.FC<StagePreviewProps> = ({
             </button>
             <button
               type="button"
-              onClick={() => onUpdateFrameConfig({ borderStyle: 'white-border', hasMat: true, matWindowShape: 'square' })}
+              onClick={() =>
+                onUpdateFrameConfig({
+                  borderStyle: 'white-border',
+                  hasMat: true,
+                  matWindowShape: 'square',
+                  aspectRatio: '1:1',
+                })
+              }
               className={`flex items-center gap-1.5 px-2.5 py-1 rounded font-medium transition-all cursor-pointer ${
                 (frameConfig.borderStyle === 'white-border' || frameConfig.hasMat) && frameConfig.matWindowShape === 'square'
                   ? 'bg-amber-400 text-neutral-950 font-semibold shadow-sm'
                   : 'text-neutral-400 hover:text-white'
               }`}
-              title="Artwork is framed inside a white square border (as in Screenshot 2)"
+              title="Artwork and white border have perfect 1:1 square symmetry on all 4 sides (as in Screenshot 2)"
             >
               <span>White Square Border</span>
             </button>

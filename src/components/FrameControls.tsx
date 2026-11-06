@@ -58,7 +58,14 @@ export const FrameControls: React.FC<FrameControlsProps> = ({ config, onChange }
           {/* Option B: White Square Border */}
           <button
             type="button"
-            onClick={() => onChange({ borderStyle: 'white-border', hasMat: true, matWindowShape: 'square' })}
+            onClick={() =>
+              onChange({
+                borderStyle: 'white-border',
+                hasMat: true,
+                matWindowShape: 'square',
+                aspectRatio: '1:1',
+              })
+            }
             className={`flex flex-col items-start p-3 rounded-xl border text-left transition-all cursor-pointer ${
               isWhiteSquare
                 ? 'border-amber-400 bg-amber-400/10 text-white ring-1 ring-amber-400/50 shadow-md'
@@ -75,7 +82,7 @@ export const FrameControls: React.FC<FrameControlsProps> = ({ config, onChange }
               {isWhiteSquare && <Check className="w-3.5 h-3.5 text-amber-400 stroke-[3]" />}
             </div>
             <p className="text-[11px] text-neutral-400 leading-relaxed">
-              Artwork is framed inside a white square mat border (Passe-partout).
+              Perfect 1:1 square symmetry: equal white border margins on Top, Bottom, Left & Right.
             </p>
           </button>
         </div>
