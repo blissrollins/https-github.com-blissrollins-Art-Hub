@@ -1,0 +1,6 @@
+{
+  "name": "ArtFrame Studio",
+  "description": "Frame your artwork in stunning photorealistic interior scenes with customizable black frames, mat boards, swipeable backgrounds, and 1-click social export.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
